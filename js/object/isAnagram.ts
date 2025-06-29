@@ -1,5 +1,5 @@
 // Input: s = "anagram", t = "nagaram"
-
+//dem tan suat xuat hien 
 // Output: true
 
 function isAnagram(s: string, t: string): boolean {
@@ -13,7 +13,6 @@ function isAnagram(s: string, t: string): boolean {
   arr2.forEach(key=> obj2[key]=(obj2[key]||0)+1)
   if(Object.values(obj1).length!==Object.values(obj2).length) return false
   for(const key in obj1) {
-    console.log(obj1.key)
     if(obj1[key]!== obj2[key]) 
       return false
   }
@@ -21,4 +20,3 @@ function isAnagram(s: string, t: string): boolean {
 };
 
 console.log(isAnagram('rat','carr'))
-
