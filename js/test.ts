@@ -1,29 +1,13 @@
-// // Input: s = "anagram", t = "nagaram"
-
-// // Output: true
-
-// function isAnagram(s: string, t: string): boolean {
-//   const arr1 = s.split('');
-//   const arr2 = t.split('')
-//   const obj1 : Record<string,number> = {} ;
-//   const obj2 :Record<string,number> = {}
-//   for(const key of arr1){
-//     obj1[key] = (obj1[key]||0)+1
-//   }
-//   arr2.forEach(key=> obj2[key]=(obj2[key]||0)+1)
-//   if(Object.values(obj1).length!==Object.values(obj2).length) return false
-//   for(const key in obj1) {
-//     console.log(obj1.key)
-//     if(obj1[key]!== obj2[key])
-//       return false
-//   }
-//   return true
-// };
-
-// console.log(isAnagram('rat','carr'))
-
-// Input: strs = ["flower","flow","flight"]
-// Output: "fl"
-function longestCommonPrefix(strs: string[]) {
-  
+function mapFunc(func: (x: any) => void, arr: (string | number)[]): any[] {
+  const res = [];
+  for (let i = 0; i < arr.length; i++) {
+    res.push(func(arr[i]));
+  }
+  return res;
 }
+
+const lengthArr = [1, 4, 3, 6];
+let areaArr = lengthArr.map((length) => length*length);
+console.log(areaArr); //[1, 16, 9, 36]
+
+console.log(mapFunc((i) => i * i, lengthArr));

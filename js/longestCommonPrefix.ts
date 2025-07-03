@@ -28,3 +28,16 @@ function duyetTungPtu(arr: string[]) {
   return arr[0];
 }
 console.log(longestCommonPrefix(["cir", "car"]));
+
+//c2: sort, so sanh arr[0] va arr[cuoi]
+function longestCommonPrefix(strs: string[]) {
+  strs.sort();
+  let res: string = "";
+  for (let i = 0; i < strs[0].length; i++) {
+    if (strs[0].charAt(i) === strs[strs.length - 1].charAt(i)) {
+      res = res + strs[0].charAt(i);
+    } else return res;
+  }
+  return res;
+}
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));
